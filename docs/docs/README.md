@@ -36,31 +36,31 @@
 ## 配置 <Badge text="0.10.1+" type="warn"/>
 测试**webpack-hot-middleware** hmr更新 autosave无法准确响应，建议关闭autosave换成手动保存
 #### vscode插件
-* [stylus](https://marketplace.visualstudio.com/items?itemName=Alan.stylus)
-* [html-css-class-completion](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
-* [html-snippets](https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets)
-* [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
-* [npm-intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
-* [path-intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-* [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker)
-* [theme-dracula](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
-* [gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-* [vscode-html-css](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
-* [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-* [beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
-* [vscode-regexp-preivew](https://marketplace.visualstudio.com/items?itemName=le0zh.vscode-regexp-preivew)
-* [vscode-language-pack-zh-hans](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)
-* [debugger-for-chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
-* [vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
-* [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
-* [vue-vscode-snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets)
-* [markdown-preview-enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
-* [language-stylus](https://marketplace.visualstudio.com/items?itemName=sysoev.language-stylus)
-* [open-in-browser](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser)
-* [gitflow](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.gitflow)
-* [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
-* [JavaScriptSnippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
-* [markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [stylus](https://marketplace.visualstudio.com/items?itemName=Alan.stylus)
+- [html-css-class-completion](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+- [html-snippets](https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets)
+- [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
+- [npm-intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+- [path-intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker)
+- [theme-dracula](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
+- [gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [vscode-html-css](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+- [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+- [vscode-regexp-preivew](https://marketplace.visualstudio.com/items?itemName=le0zh.vscode-regexp-preivew)
+- [vscode-language-pack-zh-hans](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)
+- [debugger-for-chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+- [vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
+- [vue-vscode-snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets)
+- [markdown-preview-enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+- [language-stylus](https://marketplace.visualstudio.com/items?itemName=sysoev.language-stylus)
+- [open-in-browser](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser)
+- [gitflow](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.gitflow)
+- [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
+- [JavaScriptSnippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+- [markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
 ### vscode
 
@@ -94,7 +94,7 @@
 
 [JS-CSS-HTML Formatter](https://marketplace.visualstudio.com/items?itemName=lonefy.vscode-JS-CSS-HTML-formatter) 不明确推荐
 
-```
+```json
 {
     "onSave": false,
     "javascript": {

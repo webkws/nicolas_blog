@@ -2,7 +2,7 @@
 # Reference
 ## 文档 <Badge text="0.10.1+" type="stable"/>
 
-[ES6](http://es6.ruanyifeng.com/) 必备
+[ES6](http://es6.ruanyifeng.com/) 必备  
 
 [Flex](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) css必备
 
@@ -77,10 +77,10 @@
 
 ## 书籍
 
-  - [Superhero.js](http://superherojs.com/) - Kim Joar Bekkelund, Mads Mobæk, & Olav Bjorkoy
-  - [JSBooks](http://jsbooks.revolunet.com/) - Julien Bouquillon
-  - [Third Party JavaScript](http://manning.com/vinegar/) - Ben Vinegar and Anton Kovalyov
-  - [Eloquent JavaScript](http://eloquentjavascript.net/) - Marijn Haverbeke
+  - [Superhero.js](http://superherojs.com/)
+  - [JSBooks](http://jsbooks.revolunet.com/)
+  - [Third Party JavaScript](http://manning.com/vinegar/)
+  - [Eloquent JavaScript](http://eloquentjavascript.net/)
 
 ## 博客
 

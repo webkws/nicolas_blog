@@ -1,50 +1,50 @@
 # 开发规范 <Badge text="0.10.1+" type="tip"/>
 
 ## 规范 
-* js使用[Airbnb JavaScript Style Guide](https://github.com/yuche/javascript/blob/master/README.md) 
+- js使用[Airbnb JavaScript Style Guide](https://github.com/yuche/javascript/blob/master/README.md) 
 
-* [css代码规范参考](http://zoomzhao.github.io/code-guide/) 
+- [css代码规范参考](http://zoomzhao.github.io/code-guide/) 
 
-* 外置样式很多时不建议使用vue-loader的scoped [Scoped css for dynamic element](https://github.com/vuejs/vue-loader/issues/1033)
+- 外置样式很多时不建议使用vue-loader的scoped [Scoped css for dynamic element](https://github.com/vuejs/vue-loader/issues/1033)
   
-* 根据情况使用 [/deep/](https://github.com/vuejs/vue-loader/issues/661)
+- 根据情况使用 [/deep/](https://github.com/vuejs/vue-loader/issues/661)
   
-* [值得参考的css理论：OOCSS、SMACSS与BEM](https://segmentfault.com/a/1190000000704006)
+- [值得参考的css理论：OOCSS、SMACSS与BEM](https://segmentfault.com/a/1190000000704006)
   
-* [immutable和lodash](https://www.jianshu.com/p/0fa8c7456c15) 看看用哪个
+- [immutable和lodash](https://www.jianshu.com/p/0fa8c7456c15) 看看用哪个
 
-* [CSS Class 命名](http://zoomzhao.github.io/code-guide/#css-classes) BEM略复杂，不想用
+- [CSS Class 命名](http://zoomzhao.github.io/code-guide/#css-classes) BEM略复杂，不想用
   
 ### vue  
-* [Vue 组件细则](https://vue-loader-v14.vuejs.org/zh-cn/start/spec.html) 
-* 尽可能用组件自定义事件 如`el-select @change`代替vue watch
+- [Vue 组件细则](https://vue-loader-v14.vuejs.org/zh-cn/start/spec.html) 
+- 尽可能用组件自定义事件 如`el-select @change`代替`vue watch`
   
-* 事件命名可参考 **Element-ui** node_modules\element-ui\packages\table\src\table-header.js:110
-* 善于利用vuex的dispath进行预加载，比如用户登陆页可以加载主页的内容
-* CRUD解耦，新增，修改，删除操作完后不要去getList，仅在前端实现状态更新
-* loading相关的ui, 可以写个全局vue mixin，ajax结束把loading关掉
-* vue中善于利用解构
+- 事件命名可参考 **Element-ui**的 `node_modules\element-ui\packages\table\src\table-header.js:110`
+- 善于利用vuex的dispath进行预加载，比如用户登陆页可以加载主页的内容
+- 列表相关的`CRUD`解耦，新增，修改，删除操作完后不要去`getList`，仅在前端实现状态更新
+- loading相关的UI, 可以写个全局vue mixin，ajax结束把loading关掉
+- vue中善于利用`Destructuring`
   
 
-## 项目示例汇总  
-* 函数参数重载
-  >为了这个，可以不遵循airbnb7.7
-* 箭头函数 {} 和 return 省略
-  >可尽量省略return和花括号，使用vscode格式化工具prettier自动换行处理
-* Class 项目暂不使用class，推荐模块组合方式
-* 模块export export { zip, flatten, camelCase, sumBy } from 'lodash' 生产后的lodash会打包多余模块
-   >尽量让import和export各司其职
-* 代码块，空白，逗号 使用vscode格式化工具prettier自动换行处理
-* 不使用分号，遇到两个 IIFE 合并时手动加
-* String到Number类型转换 '3'直接使用+'3'转换
-* 文件命名规则 nuxt项目中pages使用下划线_,components组件使用驼峰camelCase,其他文件使用-连接符
-* 项目尽可能不使用jQuery，使用 `$` 作为存储 vue $refs DOM 节点对象的变量名前缀
-* add Vue unwatch, vuetify源码中这个不错
-> 查看node_modules\vuetify\src\mixins\validatable.js
-  >>beforeDestroy () {
+## 项目示例汇总 
+
+- 函数参数重载:为了这个，可以不遵循airbnb7.7
+- 箭头函数 `{}` 和 `return` 省略，可尽量省略`return`和花括号，使用vscode格式化工具`prettier`自动换行处理
+- 项目暂不使用`Class`，推荐模块组合方式
+- 模块`export export { zip, flatten, camelCase, sumBy } from 'lodash'` 生产后的lodash会打包多余模块，尽量让`import`和`export`各司其职
+- 代码块，空白，逗号 使用vscode格式化工具prettier自动换行处理
+- 不使用分号，遇到两个 IIFE 合并时手动加
+- `String`到`Number`类型转换 `'3'`直接使用`+'3'`转换
+- 文件命名规则 nuxt项目中pages使用下划线 _ ，components组件使用驼峰`camelCase`,其他文件使用-连接符
+- 项目尽可能不使用jQuery，使用 `$` 作为存储 vue $refs DOM 节点对象的变量名前缀
+- vuetify源码中有大量的`vue unwatch`
+  ```js
+  //node_modules\vuetify\src\mixins\validatable.js
+  beforeDestroy () {
     this.form && this.form.unregister(this)
   }
-* 页面表格多且功能繁琐，尽量使用vue-data-tables
+  ```
+- 页面表格多且功能繁琐，尽量使用vue-data-tables
 
   
 ## 性能  
