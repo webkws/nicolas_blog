@@ -1,4 +1,6 @@
-## 规范
+# 开发规范 <Badge text="0.10.1+" type="tip"/>
+
+## 规范 
 * js使用[Airbnb JavaScript Style Guide](https://github.com/yuche/javascript/blob/master/README.md) 
 
 * [css代码规范参考](http://zoomzhao.github.io/code-guide/) 
@@ -13,7 +15,7 @@
 
 * [CSS Class 命名](http://zoomzhao.github.io/code-guide/#css-classes) BEM略复杂，不想用
   
-#### vue  
+### vue  
 * [Vue 组件细则](https://vue-loader-v14.vuejs.org/zh-cn/start/spec.html) 
 * 尽可能用组件自定义事件 如`el-select @change`代替vue watch
   

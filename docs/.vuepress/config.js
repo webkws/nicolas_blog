@@ -2,6 +2,7 @@ module.exports = {
   dest: 'vuepress',
   title: 'Nicolas',
   description: 'Vue 驱动的静态网站生成器',
+  base:'/nicolas_blog/',
   head: [
     ['link', {
       rel: 'icon',
@@ -44,7 +45,7 @@ module.exports = {
   serviceWorker: true,
   theme: 'vue',
   themeConfig: {
-    repo: 'vuejs/vuepress',
+    repo: 'https://github.com/webkws',
     docsDir: 'docs',
     // #697 Provided by the official algolia team.
     algolia: {
@@ -106,7 +107,7 @@ function genSidebarConfig2(title) {
     collapsable: false,
     children: [
       '',
-      'awesome',
+      'community',
       'standard_style',
       'es6_tips',      
       'http',      

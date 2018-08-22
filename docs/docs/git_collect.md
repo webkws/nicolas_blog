@@ -1,4 +1,6 @@
-## 用起来不错的Git项目
+# About Git
+
+## 用起来不错的Git项目 <Badge text="0.10.1+" type="tip"/>
 * [shvl](https://github.com/robinvdvleuten/shvl) shvl
 * [bulma](https://github.com/jgthms/bulma) 基于flex的css框架
 * [clipboard](https://github.com/zenorocha/clipboard.js) 不需要flash做到原生app的复制功能
@@ -19,7 +21,7 @@
 * [vue-content-placeholders](https://github.com/michalsnik/vue-content-placeholders) 加载网页的占位特效, [原理](https://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html)
 * [bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) webpack的bundle可视化 vue-cli自带,npm run build --analyze
 
-## git指令
+## git的操作 <Badge text="0.10.1+" type="warn"/>
 回退某个文件的版本指令: 
 >git checkout  版本号 文件名
 
