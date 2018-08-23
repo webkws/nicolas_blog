@@ -22,22 +22,22 @@
 * [bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) webpack的bundle可视化 vue-cli自带,npm run build --analyze
 
 ## git的操作 <Badge text="0.10.1+" type="warn"/>
-回退某个文件的版本指令: 
->git checkout  版本号 文件名
+回退某个文件的版本然后强制提交: 
+```
+#这种操作git reflog才可以看到记录,GUI或者git log看不到
+git checkout  版本号 文件名
+git push -f
+```
 
-回退后强制提交: 
->git push -f
-
-[Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
-
-[避免使用git pull](https://coderwall.com/p/jgn6-q/git-pull-is-evil)
+[Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)以及[避免使用git pull](https://coderwall.com/p/jgn6-q/git-pull-is-evil)
 
 [git rm --cached](https://stackoverflow.com/questions/25436312/gitignore-not-working/25436481) git cached导致的ignore无法忽略已提交目录
 
-[Git flow工作流](https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow)
+[Git flow工作流](https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow)和
+[最佳实践](https://www.cnblogs.com/cnblogsfans/p/5075073.html)
 
-[Git flow最佳实践](https://www.cnblogs.com/cnblogsfans/p/5075073.html)
+### Git cheatsheet :tada:
+![An image](../.vuepress/public/git-cheatsheet.jpg)
 
-Git cheatsheet图
-
-Git flow图
+### Git flow :100:
+![An image](../.vuepress/public/git-model@2x.png)

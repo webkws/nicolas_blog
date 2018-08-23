@@ -30,7 +30,7 @@
 
 [js标准参考](http://javascript.ruanyifeng.com/) 主要用法和各种 API 接口
 
-[Boostrap4](https://getbootstrap.com/) (layout grid,utilities flex) [中文](https://v4.bootcss.com/) 未翻译
+[Boostrap4](https://getbootstrap.com/) (`layout grid,utilities flex`) [中文](https://v4.bootcss.com/) 未翻译
 
 
 ## 社区 <Badge text="0.10.1+" type="error"/>
@@ -60,10 +60,7 @@
 
 [js-twitter](https://twitter.com/JavaScript) 和 [js-daily](https://twitter.com/JavaScriptDaily)
 
-[奇舞](https://weekly.75team.com/) 奇舞周刊
-
-[Fex](http://fex.baidu.com/)
-
+[奇舞](https://weekly.75team.com/) 奇舞周刊 [Fex](http://fex.baidu.com/)
 
 ## 收藏
 

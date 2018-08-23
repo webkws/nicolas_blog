@@ -60,48 +60,23 @@ module.exports = {
         buttonText: "刷新"
       }
     },
-    nav: [{
-        text: '指南',
-        link: '/guide/',
-      },
+    nav: [
       {
-        text: '配置',
-        link: '/config/'
-      },
-      {
-        text: '开发文档',
+        text: 'My Cheatsheets',
         link: '/docs/',        
       },
       {
-        text: '默认主题',
-        link: '/default-theme-config/'
-      }
+        text: '关于我',
+        link: '/about/',        
+      },
     ],
     sidebar: {
-      '/guide/': genSidebarConfig1('指南'),
-      '/docs/': genSidebarConfig2('开发文档')
+      '/docs/': genSidebarConfig('开发文档')
     }
   }
 }
 
-function genSidebarConfig1(title) {
-  return [{
-    title,
-    collapsable: false,
-    children: [
-      '',
-      'getting-started',
-      'basic-config',
-      'assets',
-      'markdown',
-      'using-vue',
-      'custom-themes',
-      'i18n',
-      'deploy'
-    ]
-  }]
-}
-function genSidebarConfig2(title) {
+function genSidebarConfig(title) {
   return [{
     title,
     collapsable: false,

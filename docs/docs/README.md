@@ -5,7 +5,7 @@
 
 [vue-cli](https://github.com/vuejs/vue-cli) 脚手架
 
-[npm](https://www.npmjs.com/) npm包
+[npm](https://www.npmjs.com/) npm包 需要时可使用[`nvm`](https://github.com/creationix/nvm)
 
 [Node.js LTS](https://nodejs.org/en/) 使用稳定版
 
@@ -34,7 +34,7 @@
 [搬瓦工](https://bwh1.net) 基于Google编程
 
 ## 配置 <Badge text="0.10.1+" type="warn"/>
-测试**webpack-hot-middleware** hmr更新 autosave无法准确响应，建议关闭autosave换成手动保存
+
 #### vscode插件
 - [stylus](https://marketplace.visualstudio.com/items?itemName=Alan.stylus)
 - [html-css-class-completion](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
@@ -64,7 +64,7 @@
 
 ### vscode
 
-测试**webpack-hot-middleware** hmr更新 autosave无法准确响应，建议关闭autosave换成手动保存
+测试`webpack-hot-middleware` hmr更新 `autosave`无法准确响应，建议关闭`autosave`换成手动保存
 
 #### user settings
 

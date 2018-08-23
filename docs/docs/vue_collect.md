@@ -2,9 +2,9 @@
 
 ## Tips
 
-- [Provide/Inject](https://medium.com/@znck/provide-inject-in-vue-2-2-b6473a7f7816) 
-- [add/remove vue watchers](https://codingexplained.com/coding/front-end/vue-js/adding-removing-watchers-dynamically) 
-- [vue中使用vw](https://www.w3cplus.com/mobile/vw-layout-in-vue.html) 
+- [Provide/Inject](https://medium.com/@znck/provide-inject-in-vue-2-2-b6473a7f7816) 类似React的React Context,
+- [add/remove vue watchers](https://codingexplained.com/coding/front-end/vue-js/adding-removing-watchers-dynamically) vuetify源码中大量使用，可参考
+- [vue中使用vw](https://www.w3cplus.com/mobile/vw-layout-in-vue.html) h5单位问题
 
 ## 深入学习
 - [vue技术内幕](http://hcysun.me/vue-design/) 
