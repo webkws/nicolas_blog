@@ -86,7 +86,8 @@ function genSidebarConfig(title) {
       'standard_style',
       'es6_tips',      
       'http',      
-      'issues',      
+      'issues',
+      'nuxt',      
       'sass_collect',      
       'git_collect',      
       'vue_collect'
