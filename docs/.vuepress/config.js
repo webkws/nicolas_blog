@@ -47,11 +47,13 @@ module.exports = {
   themeConfig: {
     repo: 'https://github.com/webkws',
     docsDir: 'docs',
+    search: true,
+    searchMaxSuggestions: 10,
     // #697 Provided by the official algolia team.
-    algolia: {
-      apiKey: '3a539aab83105f01761a137c61004d85',
-      indexName: 'vuepress'
-    },
+    // algolia: {
+    //   apiKey: '3a539aab83105f01761a137c61004d85',
+    //   indexName: 'vuepress'
+    // },
     label: '简体中文',
     lastUpdated: '上次更新',
     serviceWorker: {
@@ -66,7 +68,11 @@ module.exports = {
         link: '/docs/',        
       },
       {
-        text: '关于我',
+        text: 'My Blog',
+        link: '/blogs/',        
+      },
+      {
+        text: 'About Me',
         link: '/about/',        
       },
     ],

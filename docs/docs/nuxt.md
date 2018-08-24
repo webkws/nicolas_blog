@@ -12,7 +12,7 @@
 
 ## 关于Nuxt的常见issue <Badge text="0.10.1+" type="stable"/>
 - [刷新与asyncData钩子](https://nuxtjs.org/api#the-asyncdata-method) **Only server-side**
-- [asyncData中的promise.all](https://github.com/nuxt/nuxt.js/issues/978)
+- [asyncData钩子中使用promise.all](https://github.com/nuxt/nuxt.js/issues/978)
 - [fetch和async只在页面级组件可用](https://github.com/nuxt/nuxt.js/issues/1133)
 - [以上钩子刷新页面会报错](https://github.com/nuxt/nuxt.js/issues/2492#issuecomment-374859362)
 - [刷新页面asyncData传参问题](https://stackoverflow.com/questions/46127680/in-nuxt-js-vue-js-no-parameters-are-passed-in-refresh-f5)
