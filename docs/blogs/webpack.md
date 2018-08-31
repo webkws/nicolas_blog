@@ -4,15 +4,15 @@
 **先上一套代码:**
 
 ```js{2}
-fuck.js
+//fuck.js
 export const fuck = item => item + 2;
 
-main1.js
+//main1.js
 import {fuck} from './fuck';
 import $ from 'jquery';
 console.log($，`first  ${fuck}`);
 
-main2.js
+//main2.js
 import {fuck} from './fuck';
 import $ from 'jquery';
 console.log($，`second ${fuck}`);
@@ -120,7 +120,7 @@ import('./async.js').then( data => {
 ```
 代码所示，contact对应的路由，prop传递一个异步组件,我们现在来模拟一下异步加载。
 ```
-yarn add react-loadable -S
+// yarn add react-loadable -S 满足异步组件之前可以显示loading
 
 import loadable from 'react-loadable';
 
