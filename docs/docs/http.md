@@ -11,7 +11,7 @@
 - [escape the async/await hell](https://medium.freecodecamp.org/avoiding-the-async-await-hell-c77a0fb71c4c) 
 - [promise的简单实现](https://levelup.gitconnected.com/understand-javascript-promises-by-building-a-promise-from-scratch-84c0fd855720) 
 
-## axios配置(vue项目中的ajax配置)
+## @nuxtjs/axios配置(nuxt项目中的ajax配置)
 [vue的插件写法](https://cn.vuejs.org/v2/guide/plugins.html)
 ```js
 import Vue from 'vue'

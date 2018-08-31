@@ -77,7 +77,8 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/docs/': genSidebarConfig('开发文档')
+      '/docs/': genSidebarConfig('开发文档'),
+      '/blogs/':genSidebarConfig2('Blog')  
     }
   }
 }
@@ -97,6 +98,17 @@ function genSidebarConfig(title) {
       'sass_collect',      
       'git_collect',      
       'vue_collect'
+    ]
+  }]
+}
+
+function genSidebarConfig2(title) {
+  return [{
+    title,
+    collapsable: false,
+    children: [
+      '',
+      'webpack'
     ]
   }]
 }

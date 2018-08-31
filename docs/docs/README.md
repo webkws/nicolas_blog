@@ -20,9 +20,10 @@
 [jsperf](https://jsperf.com/) 分析代码性能
 
 生成随机数据
-* [Mockjs](http://mockjs.com/)
-* [Easy-Mock]((https://www.easy-mock.com/))
-
+* [Mockjs](http://mockjs.com/) 需要写mock规则
+* [Easy-Mock](https://www.easy-mock.com/) 用来模拟生成json文件 提供远程接口
+* [JSONPlaceholder](http://jsonplaceholder.typicode.com/) 同时支持 HTTP 和 HTTPS 这两种请求类型
+  
 [Sourcetree](https://www.sourcetreeapp.com/) 支持Git flow工作流
 
 [brew](https://brew.sh/) Mac安装软件的工具
@@ -30,6 +31,8 @@
 [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) Chrome扩展
 
 [Window Resizer](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh) 兼容屏幕尺寸工具
+
+[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) 可以代替postman的插件
 
 [搬瓦工](https://bwh1.net) 基于Google编程
 
