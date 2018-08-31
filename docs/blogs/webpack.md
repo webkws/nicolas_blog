@@ -26,7 +26,7 @@ webpack3 中有一个插件`CommonsChunkPlugin`,打包时可以把多处 import 
 new webpack.optimize.CommonsChunkPlugin({
   name: 'vendor',
   minChunks (module) {
-    return (
+    return (        
         module.resource &&
         /\.js$/.test(module.resource) &&
         module.resource.indexOf(
@@ -72,5 +72,97 @@ webpack文档中有这么一句话
 
 每次切割之后，生成一种父子关系，更深一步的优化还是要靠SplitChunkPlugin
 
-[这篇以react为例子的SplitChunkPlugin用法写的不错](https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312)
+<!-- [这篇以react为例子的SplitChunkPlugin用法写的不错](https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312)
+ -->
+ 借用老外的一篇文章把chunk分为了三种：
 
+* **Vendor Chunk** Create separate files for `vendor code` (3rd party code coming from `node_modules`). A single vendor.js file will suffice. Any vendor code used inside `index.js` (`import` statements of `npm` modules) will be break from it and form `vendor.js` which will be loaded synchronously with `main.js`.
+  
+* **Async Chunks** Create separate files for code which can be lazy loaded. Like a file for every `Route of React router` which can be **lazy loaded when route is changed**. Webpack inject some code into `main.js` which takes care of lazy loading async chunks and stops from loading same chunks again and again. When route changes, React router calls a Webpack function to load a chunk file and Webpack after done loading runs it, which chunk would internally ask React to do something.
+  
+* **Common Chunk** Create common file from code which is shared between different chunks. For example, if 10 routes create 10 different async chunks and these chunks have a common `import` statement, then code associated with that `import` statement will get injected into respective chunk files separately. That would load same piece of code every single time we change the route, which is not a very good for UX. Instead, we could take out common code shared between different chunks and create `common.js` file which will be loaded synchronously with main.js beforehand.
+
+### webpack's import
+webpack自带import(module)来处理异步，返回一个promise，这个module可以是npm也可以是本地的模块
+```js
+//async.js
+export default 'fuck';
+
+//index.js
+import('./async.js').then( data => {
+    console.log(data)
+})
+
+```
+这一步会报错，因为它和es6的`import`冲突了,需要安装`babel-plugin-syntax-dynamic-import`;
+然后运行，看时间线，会发现`0.main.js`是异步加载的,这里就包含了async.js中所有export出的value
+
+![An image](../.vuepress/public/webpack-timeline.png)
+
+### 接下来说import()和vue-router
+
+```js
+<BrowserRouter>
+    <div>
+        <div className="menu">
+            <Link exact to="/" activeClassName="active">Home</Link>
+            <Link to="/about" activeClassName="active">About</Link>
+            <Link to="/contact" activeClassName="active">Contact</Link>
+        </div>
+        
+        <Switch>
+            <Route exact path="/" component={ HomeComponent } />
+            <Route path="/about" component={ AboutComponent } />
+            <Route path="/contact" component={ AsyncContactComponent } />
+        </Switch>
+    </div>
+</BrowserRouter>
+```
+代码所示，contact对应的路由，prop传递一个异步组件,我们现在来模拟一下异步加载。
+```
+yarn add react-loadable -S
+
+import loadable from 'react-loadable';
+
+const LoadingComponent = () => <h3>please wait...</h3>;
+
+const ContactComponentPromise = () => import('./ContactComponent');
+
+const AsyncContactComponent = loadable({
+    loader: ContactComponentPromise,
+    loading: LoadingComponent
+})
+
+```
+然后观察时间线，或者页面的表现，会发现1.main.js是异步加载的
+
+### 下面说SplitChunksPlugin的配置
+
+```js
+splitChunks: {
+    chunks: "async",//有all, async, and initial 还可以写函数retrun
+    // chunks(chunk){
+    //     return chunk.name !== 'my-excluded-chunk'
+    // }
+    minSize: 30000,
+    minChunks: 1,//共享该module的最小chunk数
+    maxAsyncRequests: 5,
+    maxInitialRequests: 3,
+    automaticNameDelimiter: '~',
+    name: true,
+    cacheGroups: {
+        vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10
+        },
+    	default: {
+            minChunks: 2,//共享该module的最小chunk数
+            priority: -20,//优先级
+            reuseExistingChunk: true
+        }
+    }
+}
+```
+
+[参考文献1](https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312)
+[参考文献2](https://juejin.im/post/5af15e895188256715479a9a)
