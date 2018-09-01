@@ -55,12 +55,16 @@ new webpack.optimize.CommonsChunkPlugin({
 使用上述函数的写法保证了vendor中,只保留第三方库。而不会把runtime webpack运行时的代码包括进去，因为不把`runtime`剥离出来，本地的代码一旦改变，无论引用的第三方库改不改变，`vendor`都会变，那样的话生产环境浏览器会再次加载。
 * 再说第二个配置`mainfest`:
 用来引导所有模块的交互。manifest文件包含了加载和处理模块的逻辑，有了它，runtime会根据manifest文件来处理和加载模块
-* 再说第三个配置`async`和`children`:
+* 再说第三个配置`async`和`children`的使用方法:
+  包含require.ensure,AMD,import()
 ```js
-#[]中是依赖，callback中写入require的东西，最后一个参数是output的chunkFilename
+
+#1:[]中是依赖，callback中写入require的东西，最后一个参数是output的chunkFilename
 require.ensure([], function(require){
     require('./first.js');
 },'name');
+#2:返回一个promise
+import('./async.js).then((data)=> ... )
 ```
 * Lazy Loading，懒加载或者按需加载，属于code split的一部分。当chilren为true的时候，`source chunk`通过`entry chunks`进行code split,children 可以用来把 `entry chunk` 创建的 `children chunks` 的共用模块合并到自身，但这会导致初始加载时间较长.async就解决了children:true时合并到`entry chunks`自身时初始加载时间过长的问题，async设为true时，`commons chunk` 将不会合并到自身，而是使用一个新的异步的`commons chunk`。当这个`children chunk` 被下载时，自动并行下载该`commons chunk`。具体的分析可以看[这里](http://qiutianaimeili.com/html/page/2018/06/d348hdviz3w.html)
 * chunk分为async和sync
@@ -119,7 +123,7 @@ import('./async.js').then( data => {
 </BrowserRouter>
 ```
 代码所示，contact对应的路由，prop传递一个异步组件,我们现在来模拟一下异步加载。
-```
+```js
 // yarn add react-loadable -S 满足异步组件之前可以显示loading
 
 import loadable from 'react-loadable';

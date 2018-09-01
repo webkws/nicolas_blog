@@ -108,7 +108,8 @@ function genSidebarConfig2(title) {
     collapsable: false,
     children: [
       '',
-      'webpack'
+      'webpack',    
+      'vue_watch'  
     ]
   }]
 }
