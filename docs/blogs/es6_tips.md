@@ -1,7 +1,6 @@
-# ES6/ES7
-
+# ES6/ES7 Best Practice
+一些常见的用法就不多说了，下面是我总结的一些不常见却很不错的。
 ## Tips <Badge text="0.10.1+" type="tip"/>
-
 - 将对象彻底冻结
 ``` js
 const constantize = (obj) => {
@@ -60,14 +59,14 @@ move(); // [0, 0]
 ```
 
 
-- pipeline
+- `pipeline`
 ```js
 //即前一个函数的输出是后一个函数的输入
 const pipeline = (...funcs) =>
   val => funcs.reduce((a, b) => b(a), val);
 ```
 
-- 尾调用Fibonacci优化
+- 尾调用`Fibonacci`优化
 ```js
 //原递归:
 function Fibonacci (n) {
@@ -85,12 +84,12 @@ factorial(5, 1) // 120
 ```
 
 
-- Array.from和spread区别
+- `Array.from`和`spread`区别
 
   *除了Array.from可以处理array-like objects这种not iterable,而spread只可处理iterable*
 
 
-- 使用generator实现数组的flat
+- 使用`generator`实现数组的`flat`
 ```js
 const flat = function* (a) {
   a.forEach(function (item) {
@@ -102,7 +101,7 @@ const flat = function* (a) {
   });
 };
 ```
-- Proxy写链式操作
+- `Proxy`写链式操作
 ```js
 const pipe = (function () {
   return function (value) {
@@ -122,7 +121,7 @@ const pipe = (function () {
   }
 }());
 ```
-- Promise异步同步混合优先级
+- `Promise`异步同步混合优先级
 ```js
 console.log('sync1');
 
@@ -161,7 +160,7 @@ console.log('sync2');
 // setTimeoutThen-1
 // setTimeoutThen-2
 ```
-- class使用mixin模块整合
+- `Class`使用mixin模块整合
 ```js
 //深度拷贝
 const copyProperties=function(target,source){
@@ -210,3 +209,4 @@ constructor(name='John Snow', state='alive'){
 :::
 
 ## 最佳实践 <Badge text="0.10.1+" type="warn"/>
+这里引入一些个人项目的代码片段

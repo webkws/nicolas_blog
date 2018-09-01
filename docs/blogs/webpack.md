@@ -1,6 +1,6 @@
-## 由 CommonsChunk 到 SplitChunk
+# 由 CommonsChunk 到 SplitChunk
 
-### webpack3中的CommonsChunkPlugin
+## webpack3中的CommonsChunkPlugin
 **先上一套代码:**
 
 ```js{2}
@@ -70,9 +70,11 @@ import('./async.js).then((data)=> ... )
 * chunk分为async和sync
 >Async chunks are loaded on demand (lazy loaded) and you would see network request for async chunk files in developers tool.
   
-### webpack4中的SplitChunkPlugin
-webpack文档中有这么一句话
->Originally, chunks (and modules imported inside them) were connected by a parent-child relationship in the internal webpack graph. The CommonsChunkPlugin was used to avoid duplicated dependencies across them, but further optimizations were not possible.
+## webpack4中的SplitChunkPlugin
+
+::: tip webpack文档中有这么一句话
+Originally, chunks (and modules imported inside them) were connected by a parent-child relationship in the internal webpack graph. The CommonsChunkPlugin was used to avoid duplicated dependencies across them, but further optimizations were not possible.
+:::
 
 每次切割之后，生成一种父子关系，更深一步的优化还是要靠SplitChunkPlugin
 

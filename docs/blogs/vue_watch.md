@@ -23,9 +23,9 @@ listen(prop = []){
 }
 ```
 
-#### tips:
->you can actually watch computed properties too, and not just data properties.
-
+::: tip
+you can actually watch computed properties too, and not just data properties.
+:::
 再看下store中的watch:
 ```js
  this.$store.watch((state, getters) => getters.loading, () => {
@@ -38,7 +38,7 @@ listen(prop = []){
 created() {
    var unwatch = this.$watch(....)   
    //now the watcher is watching and you can disable it
-   //你可以把unwatch存在任何地方，调用，watch就会被remove;
+   //**你可以把unwatch存在任何地方**，调用，watch就会被remove;
    //一般是在组件destroy的时候remove   
 }
 

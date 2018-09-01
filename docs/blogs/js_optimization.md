@@ -1,6 +1,6 @@
-## js优化写法(只谈写法，不谈静态资源相关)
+# js优化写法(只谈写法)
 
-### Best practices
+## Best practices
 * 用`===`，而不是`==`,遇到不同类型时，容易出问题
 * 不使用`eval`,相当降低js的表现，还会有risk
 * 
@@ -35,7 +35,7 @@ if(true) return 'nicely done';
 name === 'login' ? user.token && redirect('/home') : isLoginRoute(name) && !user.token && process.browser && redirect('/login')
 ```
 
-### 算法相关
+## 算法相关
 * 快排[wiki](https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F#JavaScript )是这个写法，也可以这么写
 ```js
 const quickSort = (arr) => {   

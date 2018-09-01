@@ -112,9 +112,8 @@ const FieldFormatter = {
 export default FieldFormatter;
 ```
 接下来使用
-```js
+```html
 <p v-limit-characters="defaultCharacterLimit">{{ report.description }}</p>
-data => defaultCharacterLimit:100
 ```
 #### 再来个实例方法的
 ```js
@@ -147,8 +146,10 @@ computed: {
 }
 ```
 #### 最后我们写个关于axios的全局方法，各种处理http请求和处理数据，甚至可以掌握全局ui的loading
-这里个人喜欢使用@nuxtjs/axios(nuxt项目中的ajax配置)，可以和vuex更好的融合,同样nuxt可以省去很多路由配置。
-上代码吧
+::: tip
+这里个人喜欢使用`@nuxtjs/axios`(nuxt项目中的ajax配置)，可以和vuex更好的融合，同样nuxt可以省去很多路由配置。
+:::
+上代码吧！
 ```js
 import Vue from 'vue'
 import axios from 'axios'

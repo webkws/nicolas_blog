@@ -90,8 +90,7 @@ function genSidebarConfig(title) {
     children: [
       '',
       'community',
-      'standard_style',
-      'es6_tips',      
+      'standard_style',           
       'http',      
       'issues',  
       'sass_collect',      
@@ -109,7 +108,8 @@ function genSidebarConfig2(title) {
       '',
       'webpack',    
       'vue_watch',
-      'js_optimization'  
+      'js_optimization',
+      'es6_tips'  
     ]
   }]
 }
