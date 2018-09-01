@@ -8,7 +8,7 @@
 //.vue组件中使用一个listen函数
 this.listen()
 //mixin中定义listen方法,默认参数了解一下~
-listn(prop = []){
+listen(prop = []){
     this.$nextTick(() => {;
         (Array.isArray(prop) && prop.length ?
           prop : ['queryParam1', 'queryParam2'].concat(prop)
@@ -33,7 +33,7 @@ listn(prop = []){
     console.log('onSIgnin error', this.error.code)
 })
 ```
-那么有些场景你可能不需要watch了，这时候就要把watch注销掉,vuetif中大量使用了unwatch，写法如下:
+那么有些场景你可能不需要watch了，这时候就要把watch注销掉,vuetify中大量使用了unwatch，写法如下:
 ```js
 created() {
    var unwatch = this.$watch(....)   

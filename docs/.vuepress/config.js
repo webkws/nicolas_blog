@@ -78,7 +78,7 @@ module.exports = {
     ],
     sidebar: {
       '/docs/': genSidebarConfig('开发文档'),
-      '/blogs/':genSidebarConfig2('Blog')  
+      '/blogs/':genSidebarConfig2('My Blog')  
     }
   }
 }
@@ -109,7 +109,8 @@ function genSidebarConfig2(title) {
     children: [
       '',
       'webpack',    
-      'vue_watch'  
+      'vue_watch',
+      'js_optimization'  
     ]
   }]
 }
