@@ -24,7 +24,7 @@
 - 列表相关的`CRUD`解耦，新增，修改，删除操作完后不要去`getList`，仅在前端实现状态更新
 - 前端请求防止高并发的`loading`相关，比如按钮的高频点击，可以写个全局`mixin`，待ajax结束把`loading`关掉，推荐使用`promise.finally()`，记得使用`polyfill`
 - vue中善于利用`Destructuring`
-  
+- [更多](https://vuejs.org/v2/style-guide/)🚀
 
 ## 项目示例汇总 
 
