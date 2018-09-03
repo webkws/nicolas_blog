@@ -91,11 +91,9 @@ function genSidebarConfig(title) {
       '',
       'community',
       'standard_style',           
-      'http',      
-      'issues',  
-      'sass_collect',      
+      'http',     
       'git_collect',      
-      'vue_collect'
+      'nuxt_collect'
     ]
   }]
 }
@@ -109,7 +107,12 @@ function genSidebarConfig2(title) {
       'webpack',    
       'vue_watch',
       'js_optimization',
-      'es6_tips'  
+      'vue_inject',         
+      'es6_tips',
+      'oocss',
+      'sass',
+      'mobile_unit',
+      'issues' 
     ]
   }]
 }

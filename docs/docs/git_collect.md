@@ -16,7 +16,6 @@
 * [dragscroll](https://github.com/asvd/dragscroll) 浏览器scrollbar解决方案
 * [date-fns](https://github.com/date-fns/date-fns) 和时间格式化相关的库 [moment](https://github.com/moment/moment)
 * [vConsole](https://github.com/Tencent/vConsole/blob/dev/README_CN.md) 手机网页的前端开发者调试面板
-* [nuxt-koa](https://github.com/nuxt-community/koa-template) 手机网页的前端开发者调试面板
 * [popmotion](https://github.com/Popmotion/popmotion) js运动引擎，可以用来实现动画，物理效果和输入跟踪
 * [vue-content-placeholders](https://github.com/michalsnik/vue-content-placeholders) 加载网页的占位特效, [原理](https://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html)
 * [bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) webpack的bundle可视化 vue-cli自带,npm run build --analyze

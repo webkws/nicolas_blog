@@ -196,6 +196,7 @@ export const delayAjax = ($axios, store, callback) => {
   return callback()
 }
 
+//nuxt中写的plugin配置 参数带如下
 export default ({ $axios, app, store, route, error, redirect }) => {
   $axios.defaults.timeout = 1000000000
   $axios.onError(err => {
