@@ -1,4 +1,4 @@
-# 只会嵌套敢说自己会SASS
+# 只会嵌套不敢说自己会SASS
 
 本文直接用好的`sass`片段做例子 <Badge text="0.12.1+" type="tip"/>
 #### `function`指令和`mixin`

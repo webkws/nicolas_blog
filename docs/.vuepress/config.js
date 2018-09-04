@@ -107,6 +107,7 @@ function genSidebarConfig2(title) {
       'webpack',    
       'vue_watch',
       'js_optimization',
+      'web_optimization',
       'vue_inject',         
       'es6_tips',
       'oocss',
