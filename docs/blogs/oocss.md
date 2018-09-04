@@ -1,4 +1,4 @@
-# Object-Oriented CSS 
+# Object-Oriented CSS <Badge text="0.10.1+" type="tip"/>
 `Object Oriented CSS`，只是一种书写方法，它具有面向对象的css，css的`抽象化`、`模块化`和`继承`等特点。它是一种容易重用的css规则。还可以**降低页面加载时间**，**提高网页性能**。有俩原则:
 * SEPARATION OF STRUCTURE FROM SKIN（*结构和样式相分离*）
 * SEPARATION OF CONTAINERS AND CONTENT（*容器和内容相分离*）
