@@ -39,7 +39,7 @@
 * 懒加载无非就是大多都是图片相关，并发加载的外部资源过多会阻塞js的加载。图片应该在进入可视区后再请求，lazyload，还可以提前placeholder一下比如知乎的手机端，类似这种[content-placeholders](https://github.com/michalsnik/vue-content-placeholders)
 * 预加载和懒加载相反，是对资源的提前请求，需要在用户空闲时进行（比如登陆页偷偷的进行），也可以从缓存中加载，提高用户的体验。1、img的display:none不会影响页面的渲染，但是会发送请求，等二次的时候直接从缓存中读取了。2、在js中，new一个Image对象，添加src即可。
 
-## 重绘与回流
+## 重绘与回流 <Badge text="0.10.1+" type="tip"/>
 
 因为元素的规模尺寸，布局，隐藏等改变而需要重新构建，称为回流。当`render tree`中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如`background-color`。则就叫称为重绘。UI进程和JS进程互相阻塞，这就是css阻塞js的原因。因为部分css会导致浏览器的重绘和回流。回流必将引起重绘，而重绘不一定会引起回流。
 
@@ -102,3 +102,43 @@ outline outline-style outline-width box-shadow
 查询网址[csstriggers🚀](https://csstriggers.com/) 参考文档[REFLOWS & REPAINTS](http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/)
 
 ## 浏览器存储
+
+#### Cookie
+因为http是无状态的，所以cookie诞生了，cookie是识别客户端的一个标识。cookie的生成方式，是`http response header`中返回了`set-cookie`，服务端生成，客户端维护，还可以通过js写入,但那只是非httponly的cookie。关于cookie的优化，cookie都会被种在`domain`下，但是并不是所有的请求都需要cookie，比如cdn的域名和主域名要分开，因为静态文件不需要cookie。
+
+**如图所示cookie都被种在了domain下:**
+
+![An image](../.vuepress/public/cookie_http.png)
+上图HTTP打勾对意思就是HTTPONLY的，不允许js修改。
+
+#### localStorage, SessionStorage, IndexedDB
+这俩设计出来就是做浏览器本地存储的。具有不错的api封装，仅在客户端使用。
+
+实战中，可以先从本地读取，后续api请求结束之后再更新它，用户不会感觉到什么。`sessionStorage`可以用作表单的业务，比如：第一页的填写到第二页的填写，然后用户back了，或者是用户突然刷新了。
+
+以上两种对结构化数据来说不太有用，新出了IndexedDB，目前用的不多
+
+## service worker <Badge text="0.10.1+" type="warning"/>
+这是一门学问，暂时不会，不多说。
+
+## 缓存
+**看一下淘宝首页的Network**:
+
+![An image](../.vuepress/public/cache_example.png)
+控制缓存策略的机制，cache-control,它可以存在request header中也可以存在response header中。
+分为
+```js
+//这段时间要用缓存，不会再发请求,它优先级大于expire，status为304
+cache-control: max-age=63072000 
+//缓存分为 public和private，比如cdn作为中间服务器是public
+//s-maxage是public的缓存
+//s-maxage优先级大于max-age
+cache-control: max-age=2592000,s-maxage=3600
+//no-cache是发请求到服务端，然后再根据返回比如lastModified，no-store是不用缓存
+cache-control:private, max-age=0, no-cache
+//根据last-modified和if-modified来判断 是否需要更新缓存,相比较来看，ETag的哈希值最佳，因为服务器的时间有可能不准
+last-modified: Wed, 05 Jul 2017 07:30:08 GMT
+```
+
+## SSR
+以[vue-ssr](https://ssr.vuejs.org/)为例.随意打开一个SPA的vue网站，清除缓存后，用`performance`刷新发现，很大的时间都在加载js，利用客户端的运算能力，加载和执行vue.js相关代码，而ssr是利用了服务端的运算能力。服务端渲染和客户端渲染要注意平衡，哪一块用SSR，哪一块用Client
