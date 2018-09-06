@@ -1,4 +1,4 @@
-# About Git
+# Git
 
 ## 用起来不错的Git项目 <Badge text="0.10.1+" type="tip"/>
 * [shvl](https://github.com/robinvdvleuten/shvl) shvl

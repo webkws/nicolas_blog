@@ -1,4 +1,4 @@
-# About Http
+# Http
 
 ## 回调地狱的救赎
 
@@ -10,9 +10,7 @@
 - [async/await blog2](https://alligator.io/js/async-functions/) 
 - [escape the async/await hell](https://medium.freecodecamp.org/avoiding-the-async-await-hell-c77a0fb71c4c) 
 - [promise的简单实现](https://levelup.gitconnected.com/understand-javascript-promises-by-building-a-promise-from-scratch-84c0fd855720) 
-
-
-
+  
 ## @nuxtjs/axios配置
 ::: tip
 写个关于axios的全局方法，各种处理http请求和处理数据，甚至可以掌握全局ui的。

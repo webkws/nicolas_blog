@@ -1,4 +1,4 @@
-# About Nuxt
+# Nuxt
 
 ### nuxt是什么？
 - 🐬[官方文档](https://nuxtjs.org/)
