@@ -1,12 +1,12 @@
 module.exports = {
   dest: 'vuepress',
   title: 'Nicolas',
-  description: 'Vue 驱动的静态网站生成器',
+  description: 'Nicolas Blog',
   base:'/nicolas_blog/',
   head: [
     ['link', {
       rel: 'icon',
-      href: `/logo.png`
+      href: `/logo.jpg`
     }],
     ['link', {
       rel: 'manifest',
@@ -24,19 +24,6 @@ module.exports = {
       name: 'apple-mobile-web-app-status-bar-style',
       content: 'black'
     }],
-    ['link', {
-      rel: 'apple-touch-icon',
-      href: `/icons/apple-touch-icon-152x152.png`
-    }],
-    ['link', {
-      rel: 'mask-icon',
-      href: '/icons/safari-pinned-tab.svg',
-      color: '#3eaf7c'
-    }],
-    ['meta', {
-      name: 'msapplication-TileImage',
-      content: '/icons/msapplication-icon-144x144.png'
-    }],
     ['meta', {
       name: 'msapplication-TileColor',
       content: '#000000'
@@ -49,11 +36,6 @@ module.exports = {
     docsDir: 'docs',
     search: true,
     searchMaxSuggestions: 10,
-    // #697 Provided by the official algolia team.
-    // algolia: {
-    //   apiKey: '3a539aab83105f01761a137c61004d85',
-    //   indexName: 'vuepress'
-    // },
     label: '简体中文',
     lastUpdated: '上次更新',
     serviceWorker: {
