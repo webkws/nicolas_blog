@@ -32,7 +32,6 @@
 
 [Boostrap4](https://getbootstrap.com/) (`layout grid,utilities flex`) [中文](https://v4.bootcss.com/) 未翻译
 
-
 ## 社区 <Badge text="0.10.1+" type="error"/>
 [stackoverflow](https://stackoverflow.com/) 最强大提问社区
 
