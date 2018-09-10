@@ -85,17 +85,18 @@ function genSidebarConfig2(title) {
     title,
     collapsable: false,
     children: [
-      '',
-      'webpack',    
-      'vue_watch',
-      'js_optimization',
+      '',      
       'web_optimization',
+      'issues',
+      'js_optimization',
+      'mobile_unit',
+      'oocss',
       'vue_inject',         
       'es6_tips',
-      'oocss',
-      'sass',
-      'mobile_unit',
-      'issues' 
+      'curry_functions',      
+      'sass',            
+      'vue_watch',
+      'webpack',
     ]
   }]
 }
