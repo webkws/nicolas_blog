@@ -6,7 +6,7 @@ Curry的概念很简单，就是通过传入一个参数就可以呼叫一个fun
 
 Youtube里一个视频这样总结的: `Curry is when a function doesn't take all of its arguments upfront instead, it wants you to give it the first argument and then the function returns another function which you are supposed to call with the second argument and so on untill all arguments have been provided and then the function at the end of the chain will be the one that returns the value you actually want`
 
-
+## Curry
 先看一下[First-class function的概念](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)，简单来说就是`treated like any other variable`,这里是可以作为参数传递的例子.
 ```js
 const someFunction = () => console.log('hello wolrd')
@@ -85,31 +85,32 @@ const com = curriedComp('OrderList')
 ```
 
 
-再来说下compose：
+## pipe和compose
+pipe和compose其实就是参数是相反的方向,先来看一下这段代码
 ```js
-//f和g都是function，x则是通过它们之间管道的值
-const compose = (f, g) => x => f(g(x));
+const getName = (person) => person.name;
+const uppercase = (string) => string.toUpperCase();
+const get6Characters = string => string.substring(0, 6);
+const reverse = string => string.split('').reverse().join('');
+const result = reverse(get6Characters(uppercase(getName({name:'Nicolas_Cage'}))))
+这个就是所谓的pipeline,前一个函数的输出是后一个函数的输入
 ```
-举个例子
+用reduce改写一下
 ```js
-//面向对象编程
-const getFirstCharacterLower = str => str.substr(0, 1).toLowerCase();
-//compose
-//先写个取值的函数
-const curriedSubstring = start => length => str => str.substr(start, length);
-//再写个取lowercase的
-const curriedLowerCase = str => toLowerCase
-//然后组合一下
-const compose = str = curriedLowerCase(curriedSubstring(0)(1)(str))
+const pipe = (...fns) => obj => fns.reduce((f, g) => g(f), obj);
+pipe(getName, uppercase, get6Characters, reverse)({name:'Nicolas_Cage'})//ALOCIN
 ```
-递归饲养这些函数吧
+以上是pipe,compose其实和pipe一样，只是参数的方向反了
 ```js
+//利用了reduceRight即可
+const compose = (...fns) => obj => fns.reduceRight((f, g) => g(f), obj);
+compose(reverse, get6Characters, uppercase, getName)({name:'Nicolas_Cage'})//ALOCIN
+//也可以使用args的reverse
+const compose = (...fns) =>pipe.apply(pipe, fns.reverse())
+//以上都是一元参数，多个参数可以这么写
 const compose (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)))
-//use
-const getNewCompose = compose(curriedLowerCase, curriedSubstring(0, 1));
-
 ```
-`curry`确实有点不符合js的语言习惯，慢慢学函数式编程吧。
+慢慢学函数式编程吧。
 
 
 
