@@ -19,7 +19,7 @@ const firstClass2 = () => someFunction
 firstClass1(firstClass2()) //'hello wolrd'
 ```
 
-来个简单的例子看一下curry:
+来个简单的例子看一下`curry`:
 ```js
 //古老的add方法
 const notCurry = (x, y, z) => x + y + z;
@@ -38,7 +38,7 @@ const mdFunc =  mFunc('冬')
 //马冬梅
 const mdm = mdFunc('梅')
 ```
-类似的关于字符串substr的如下:
+类似的关于字符串`substr`的如下:
 ```js
 //古老的substr的写法
 const iWantSubStr = (str, start, length) =>str.substr(start, length)
@@ -51,7 +51,7 @@ const getFirstCharacters = (length, str) => curriedSubstr(0)(length)(str);
 //get第一个字母
 const getFirstCharacter = str => curriedSubstr(0)(1)(str);
 ```
-用lodash的curry方法也可以把普通函数转化为curry function，具体的curry的实现后边有
+用`lodash`的`curry`方法也可以把普通函数转化为`curry function`，具体的`curry`的实现后边有
 ```js
 //比如我要使用filter筛选出有橡胶果实的男主角.
 //先用古老方法
@@ -63,7 +63,7 @@ var onePiece = [
 let hasFruit = (fruit, obj) => obj.fruit === fruit;
 const hero = onePiece.filter(x => hasFruit('橡胶果实', x));
 //再使用lodash使hasFruit柯里化
-import '_' from 'lodash/curry'
+import '_' from 'lodash'
 const hasFruitCurry =  _.curry((fruit, obj) => obj.fruit === fruit);
 const heroCurry = onePiece.filter(hasFruitCurry('橡胶果实'))
 
@@ -86,21 +86,21 @@ const com = curriedComp('OrderList')
 
 
 ## pipe和compose
-pipe和compose其实就是参数是相反的方向,先来看一下这段代码
+`pipe`和`compose`其实就是参数是相反的方向,先来看一下这段代码
 ```js
 const getName = (person) => person.name;
 const uppercase = (string) => string.toUpperCase();
 const get6Characters = string => string.substring(0, 6);
 const reverse = string => string.split('').reverse().join('');
 const result = reverse(get6Characters(uppercase(getName({name:'Nicolas_Cage'}))))
-这个就是所谓的pipeline,前一个函数的输出是后一个函数的输入
+//这个就是所谓的pipeline,前一个函数的输出是后一个函数的输入
 ```
 用reduce改写一下
 ```js
 const pipe = (...fns) => obj => fns.reduce((f, g) => g(f), obj);
 pipe(getName, uppercase, get6Characters, reverse)({name:'Nicolas_Cage'})//ALOCIN
 ```
-以上是pipe,compose其实和pipe一样，只是参数的方向反了
+以上是`pipe`, `compose`其实和`pipe`一样，只是参数的方向反了
 ```js
 //利用了reduceRight即可
 const compose = (...fns) => obj => fns.reduceRight((f, g) => g(f), obj);
