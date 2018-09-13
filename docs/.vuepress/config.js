@@ -1,7 +1,7 @@
 module.exports = {
   dest: 'vuepress',
   title: 'Nicolas',
-  description: 'Nicolas Blog',
+  description: 'Winter is coming...',
   base:'/nicolas_blog/',
   head: [
     ['link', {
