@@ -61,5 +61,21 @@ const factorial = number => {
   return number < 2 ? 1 : number * factorial(number - 1);
 };
 ```
+
+* 二分法查找
+```js
+const binarySearch = (arr, l, r, target) => {
+  if (l > r) return -1;
+  // var mid = l+ Math.floor((r-l)/2);
+  var mid = (l + r) >> 1;
+  if (arr[mid] === target) {
+    return mid;
+  } else if (arr[mid] > target) {
+    return binarySearch(arr, l, mid - 1, target);
+  } else {
+    return binarySearch(arr, mid + 1, r, target);
+  }
+};
+```
   
 先说这么多吧，后续再补充
