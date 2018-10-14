@@ -88,6 +88,7 @@ function genSidebarConfig2(title) {
       '',      
       'web_optimization',
       'issues',
+      'canvas',
       'js_optimization',
       'mobile_unit',
       'oocss',
@@ -96,7 +97,7 @@ function genSidebarConfig2(title) {
       'curry_functions',      
       'sass',            
       'vue_watch',
-      'webpack',
+      'webpack',      
     ]
   }]
 }
