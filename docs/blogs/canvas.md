@@ -26,7 +26,7 @@ Snippet：[vscode snippet](https://marketplace.visualstudio.com/items?itemName=h
 
 ## Demo List 
 
-#### 1.碰撞和磁性
+#### 1.碰撞和磁性(初级版)
 
 🚀[直达](https://webkws.github.io/canvas_demo/demo1/demo1.html)
 
@@ -52,6 +52,37 @@ function Circle(x, ...){
 }
 ```
 具体的看code，推荐一个色彩取材网站，[kooler](https://color.adobe.com/kooler-color-theme-4384532/)
+
+#### 2.带重力和摩擦力
+
+🚀[直达](https://webkws.github.io/canvas_demo/demo2/demo1.html)
+
+思路:draw和update以及push到数组里的近百个小球思路不变。全局给定摩擦系数以及重力加速度,在update函数中对dx,和dy的速度进行更新即可。
+```js
+this.update = function () {
+    // 这里要考虑到dy，不然小球会被caught到地板上抖动
+if (this.y + this.radius + this.dy > canvas.height) {
+    //触地的瞬间先反向
+    this.dy = -this.dy;
+    //再给予加速度以及摩擦作用力
+    this.dy = this.dy * friction;
+    this.dx = this.dx * friction;
+} else {
+    this.dy += gravity;
+}
+//屏幕左侧和右侧
+if (this.x + this.radius >= canvas.width || this.x - this.radius <= 0) {
+    this.dx = -this.dx * friction;
+}
+//更新
+    this.x += this.dx;
+    this.y += this.dy;
+    this.draw();
+};
+```
+
+#### 3.碰撞检测(中级)
+
 
 
 
