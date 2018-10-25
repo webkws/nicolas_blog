@@ -1,4 +1,17 @@
-# Vue中的Provide/Inject
+# Vue中的奇淫技巧
+
+## Object.assign
+
+恢复某个组件中的初始状态
+[stackoverflow](https://stackoverflow.com/questions/43643325/resetting-vuejs-data-properties-to-initial-values)
+
+```js
+Object.assign(this.$data, this.$options.data());
+//上边的代码效果太宽,可以改为如下
+Object.assign(this.$data.obj, this.$options.data().obj);
+//当拿到后端的数据，赋值给data时 可以这么写
+Object.assign(this.form, responseData);
+```
 
 ## Provide/Inject
 
