@@ -74,3 +74,24 @@ list.map(_ => ({
     ...(this.format?this.format(_):_)
 }))
 ```
+
+### forEach的return毫无意义
+```js
+collection.forEach(function () {
+  // do something
+  return false;
+});
+```
+不会跳出包裹函数或者循环.
+`array#forEach simply does not care for the return value of its worker function. It just executes the worker function for each array element.You could use the worker function to set an outer variable`
+[分析](https://stackoverflow.com/questions/43555904/foreach-for-in-not-returning-values)
+```js
+function truthCheck(collection, pre) {
+  var allAreTruthy = true;
+  collection.forEach(function (elem) {
+    // if this ever flips allAreTruthy to false, it will stay false
+    allAreTruthy = allAreTruthy && elem[pre];
+  });
+  return allAreTruthy;
+}
+```
