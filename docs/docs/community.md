@@ -61,6 +61,8 @@
 
 [奇舞](https://weekly.75team.com/) 奇舞周刊 [Fex](http://fex.baidu.com/)
 
+[30seconds](https://30secondsofcode.org/)
+
 ## 收藏
 
 [awesome](https://www.awesomes.cn/) 前端库
