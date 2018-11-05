@@ -11,6 +11,19 @@ Object.assign(this.$data, this.$options.data());
 Object.assign(this.$data.obj, this.$options.data().obj);
 //当拿到后端的数据，赋值给data时 可以这么写
 Object.assign(this.form, responseData);
+
+
+//demo
+async onRefresh(done) {
+    //这里我只想初始化props，也就是 除listData, report_type, learned_status, tabIndex, status之外的prop
+    //如果嫌麻烦的话 可以把一些变量定义在data.obj中，自己取舍
+    //这里要注意, maskDOM为data中存的dom节点，这里tab页切换的时候 全屏遮罩不要置null,否则mounted就白玩了
+    const { listData, report_type, learned_status, tabIndex, status, maskDOM, ...props } = this.$options.data();
+    Object.assign(this.$data, props);
+    await this.getList({ isFinite: false })
+    done();
+},
+
 ```
 
 ## Provide/Inject
