@@ -88,6 +88,7 @@ function genSidebarConfig2(title) {
       '',      
       'web_optimization',
       'issues',
+      'safe_access',
       'canvas',
       'js_optimization',
       'mobile_unit',

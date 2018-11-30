@@ -2,6 +2,7 @@
 
 ## 用起来不错的Git项目 <Badge text="0.10.1+" type="tip"/>
 * [shvl](https://github.com/robinvdvleuten/shvl) shvl
+* [typy](https://www.npmjs.com/package/typy) typy
 * [bulma](https://github.com/jgthms/bulma) 基于flex的css框架
 * [clipboard](https://github.com/zenorocha/clipboard.js) 不需要flash做到原生app的复制功能
 * [vuex-persistedstate](https://github.com/robinvdvleuten/vuex-persistedstate) vuex的持久化方案

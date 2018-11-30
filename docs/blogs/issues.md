@@ -95,3 +95,16 @@ function truthCheck(collection, pre) {
   return allAreTruthy;
 }
 ```
+
+
+### css同名不会再次加载问题
+在页面跳转的时候总有几个页面，在跳到该页面时样式全错位了，但是刷新一下就又好了,是因为跳转的时候 同class不会再次加载,而是沿用了前一个页面的,在起名的时候可以自行区分,或者使用scoped来增加哈希值
+
+### vh单位手机端遇到键盘弹出 此时vh不会计算键盘的
+主流浏览器的宽高像素比基本都是 1.777,换成vw 勉强解决. 
+
+### css技巧
+.el-button + .el-button选择器，可以忽略第一个dom，不错。
+
+### Sarafi的表格box-shadow无效问题
+<!-- ### Sarafi的表格box-shadow无效 -->
