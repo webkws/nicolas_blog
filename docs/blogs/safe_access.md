@@ -146,7 +146,7 @@ console.log(either(mySafeObj.f.e.name, false));
 
 ## 对接
 
-对接这里就不谈了，根据前后端约定，做[全局ajax处理](../docs/https://webkws.github.io/nicolas_blog/docs/http.html)吧，去他么的业务.
+对接这里就不谈了，根据前后端约定，做[全局ajax处理](../docs/http.html)吧，去他么的业务.
 
 
 <!-- ```
