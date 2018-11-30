@@ -135,7 +135,6 @@ const mySafeObj = safe({
 });
 console.log(mySafeObj.d.e);
 
-// returns our fallback value, of false
 console.log(either(mySafeObj.f.e.name, false)); 
 
 ```
