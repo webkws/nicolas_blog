@@ -1,6 +1,7 @@
-## Vue Plugin实战
-根据[官方文档](https://cn.vuejs.org/v2/guide/plugins.html),首先定义一个对象，给其添加install公开方法，在内部可以添加全部方法或属性、全局指令过滤和过度、还可以注入组件以及添加实例方法。
-#### 我们由简到难，先来个basic的,写个混合demo
+## Vue Plugin实战 <Badge text="0.10.1+" type="tip"/>
+根据[官方文档](https://cn.vuejs.org/v2/guide/plugins.html),首先定义一个对象，给其添加`install`公开方法，在内部可以添加全部**方法**或**属性**、全局**指令**过滤和**过度**、还可以注入组件以及添加**实例方法**。
+### 我们由简到难，先来个basic的,写个混合demo
+
 ```js
 const MyPlugin = {
   install(Vue, options) {
@@ -41,7 +42,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 ```
 
-#### 再来个wordPress的practice
+### 再来个wordPress的practice
 
 ```js
 //plugins/wordpress
@@ -68,7 +69,7 @@ Vue.ues(WordExpressPlugin,{
 </template>
 ```
 
-#### 再来个复杂点的指令相关
+### 再来个复杂点的指令相关
 让我们写一个指令，限制当前标签最高显示100个字符，多出的省略，显示read more的标签
 ```js
 //plugins/fieldFormatter.js
@@ -115,7 +116,7 @@ export default FieldFormatter;
 ```html
 <p v-limit-characters="defaultCharacterLimit">{{ report.description }}</p>
 ```
-#### 再来个实例方法的
+### 再来个实例方法的
 ```js
 const FieldFormatter = {
   install(Vue, options) {
@@ -145,7 +146,7 @@ computed: {
     },
 }
 ```
-#### 再来个图片lazyload的
+### 再来个图片lazyload的
 ```js
 install(Vue) {
     Vue.directive('src', {
@@ -188,7 +189,7 @@ install(Vue) {
     })
   }
 ```
-#### 最后我们写个关于axios的全局方法，各种处理http请求和处理数据，甚至可以掌握全局ui的loading
+### 最后我们写个关于axios的全局方法，各种处理http请求和处理数据，甚至可以掌握全局ui的loading
 ::: tip
 这里个人喜欢使用`@nuxtjs/axios`(nuxt项目中的ajax配置)，可以和vuex更好的融合，同样nuxt可以省去很多路由配置。
 :::
@@ -299,3 +300,103 @@ export default ({ $axios, app, store, route, error, redirect }) => {
 
 ```
 
+
+### 第二种ajaxPlus
+
+第二种使用了`axios.request`方法
+
+```js
+
+import axios from 'axios'
+import store from '../store'
+import { Message } from 'element-ui'
+import router from '../router'
+
+const ajaxPlus = {}
+
+const errorMsg = (err = '系统错误，请稍后重新访问') => Message.error({
+  duration: 2000,
+  message: err
+})
+
+const ajaxCallback = (res, cb) => {
+  const { data /**字段待定*/ } = res;
+  cb(data);
+}
+axios.defaults.baseURL = '/api/v1';
+axios.defaults.timeout = 50000;
+
+axios.interceptors.request.use(
+  config => {
+    return config
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
+
+// 添加一个响应拦截器
+axios.interceptors.response.use(
+  response => {
+    return response
+  },
+  error => {
+    const { data: { error_code, message } } = error.response;
+    if (error_code === 2005 && router.currentRoute.path !== '/login') {
+      store.commit('LOG_OUT');
+      router.replace({
+        path: '/login',
+        query: {
+          redirect: router.currentRoute.path
+        },
+      })
+    } else {
+      console.log(error_code);
+    }
+    errorMsg(message);
+    return Promise.reject(error.response.data)
+  }
+)
+
+ajaxPlus.install = function (Vue) {
+  Vue.prototype.$axios = axios
+  Vue.prototype.$ajaxPlus = function (
+    method,
+    url,
+    _data = {},
+    cb = () => {},
+    cbCfg = {},
+    _invoking = 'invoking'
+  ) {
+    let obj = _data
+    typeof _data === 'function' && ((obj = {}), (cb = _data))
+    const param = method.toLowerCase() === 'get' ? 'params' : 'data'
+    const opt = {
+      url,
+      method,
+      [param]: obj
+    }
+    this[_invoking] = true;
+    return axios.request(opt)
+      .then(res => ajaxCallback(res, cb))
+      .catch(err => {
+        cbCfg && cbCfg.catchCb && cbCfg.catchCb()
+      })
+      .finally(() => {
+        _invoking && (this[_invoking] = false)
+      })
+  }
+
+  Vue.mixin({
+    data() {
+      return {
+        invoking: false,
+      }
+    }
+  })
+}
+
+export default ajaxPlus
+
+
+```
