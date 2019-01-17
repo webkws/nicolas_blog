@@ -6,6 +6,8 @@
 - [Nuxt demos](https://github.com/nuxt/nuxt.js/tree/dev/examples)
 - [Live Demo](https://nuxtjs.org/examples)
 - [特殊的钩子Async Data](https://zendev.com/2018/06/07/async-data-options-in-vue-nuxt.html)
+- [asyncData和fetch的区别](https://github.com/nuxt/nuxt.js/issues/1432)
+- [Nuxt的lifecyle](https://github.com/nuxt/nuxt.js/issues/2521)
 
 ### Nuxt的常见用法
 我将官网的demo融合成了一个，带有关键性的注释

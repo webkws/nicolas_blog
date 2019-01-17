@@ -28,6 +28,14 @@
 git checkout  版本号 文件名
 git push -f
 ```
+[俩分支差距太大，且旧分支没什么用了 ](https://stackoverflow.com/questions/4624357/how-do-i-overwrite-rather-than-merge-a-branch-on-another-branch-in-git)
+```
+#手动合并麻烦，想直接覆盖
+git checkout branch_new
+git merge -s ours branch_old
+git checkout branch_old
+git merge branch_new
+```
 
 [Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)以及[避免使用git pull](https://coderwall.com/p/jgn6-q/git-pull-is-evil)
 

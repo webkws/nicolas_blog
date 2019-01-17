@@ -110,3 +110,8 @@ function truthCheck(collection, pre) {
 Sarafi的表格元素box-shadow即使是加了prefix也会无效
 
 [解决方案居然是加display:block](https://stackoverflow.com/questions/7610021/applying-box-shadow-to-tbody-in-safari)
+
+### contenteditable属性 兼容性差 不如focuout的时候 赋值
+
+[直达](https://stackoverflow.com/questions/46487619/contenteditable-div-append-a-html-element-and-v-model-it-in-vuejs)✈️
+
