@@ -92,6 +92,7 @@ function genSidebarConfig2(title) {
       'canvas',
       'js_optimization',
       'mobile_unit',
+      'sentry',
       'oocss',
       'vue_inject',         
       'es6_tips',
