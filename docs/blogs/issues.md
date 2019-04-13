@@ -115,3 +115,32 @@ Sarafi的表格元素box-shadow即使是加了prefix也会无效
 
 [直达](https://stackoverflow.com/questions/46487619/contenteditable-div-append-a-html-element-and-v-model-it-in-vuejs)✈️
 
+### 1px边框在部分移动端变粗问题产生
+
+物理像素是最小单元，而css的1px控制的是逻辑像素，在retina dpr为2屏幕下是占有2X2物流像素的.
+
+**实际上，如果拿到750的设计稿，border量取的是1px solid red;然而iphone6中的实际像素却是375px;那么设计师实际需要的就是0.5px;不是1px变粗了，而是实际只需要0.5px而已**
+[1px解决方案](https://www.w3cplus.com/css/fix-1px-for-retina.html)
+[demo](https://codepen.io/foolkai/pen/QEgzLm)
+
+
+### canvas跨域问题
+
+### 微信浏览器打开页面 被阻止问题
+
+### 微信h5图分享问题
+
+微信在长按图片保存分享的时候，如果图片来源于后端，且生成需要session，此时就无法分享给朋友，需要先将后端动态生成给前端的图保存到本地base64.
+
+### vue-router的权限路由问题
+
+
+
+
+
+
+
+
+
+
+
