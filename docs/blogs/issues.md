@@ -121,18 +121,66 @@ Sarafi的表格元素box-shadow即使是加了prefix也会无效
 
 **实际上，如果拿到750的设计稿，border量取的是1px solid red;然而iphone6中的实际像素却是375px;那么设计师实际需要的就是0.5px;不是1px变粗了，而是实际只需要0.5px而已**
 [1px解决方案](https://www.w3cplus.com/css/fix-1px-for-retina.html)
-[demo](https://codepen.io/foolkai/pen/QEgzLm)
-
+[demo](https://codepen.io/foolkai/pen/**QEgzLm**)
 
 ### canvas跨域问题
+canvas的getImageData有时候会遇到图片跨域问题.
+解决方案:服务器端设置`Access-Control-Allow-Origin`的`header` 就可以把image转为canvas
+```js
+var img = new Image(),
+    canvas = document.createElement("canvas"),
+    ctx = canvas.getContext("2d"),
+    src = "http://example.com/image.jpg";
+img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+}
+img.src = src;
+```
+但是`toDataURL`还是会报错,根据html5的规则，图片需要设置`crossOrigin`值,`in order to allow the browser to read the pixel data back from the canvas`
+
+```js
+
+if (/^([\w]+\:)?\/\//.test(src) && src.indexOf(location.host) === -1) {
+  img.crossOrigin = "anonymous"; // or "use-credentials"
+}
+```
+
+
 
 ### 微信浏览器打开页面 被阻止问题
+`微信浏览器`和`safari`打开新标签会遇到弹出被阻止问题.
+原理:
+`当window.open为用户触发事件内部或者加载时，不会被拦截，一旦将弹出代码移动到ajax或者一段异步代码内部，马上就出现被拦截的表现了(浏览器认为这可能是一个广告，不是一个用户希望看到的页面)`
+
+解决方案
+
+```js
+//异步代码中获取直播地址
+document.getElementById('id').setAttribute('href', res.data.meta.url//直播地址);
+document.getElementById('id').click();//href属性更改后模拟点击,让浏览器以为是用户自己主动点击的，而不是自动弹出的广告
+```
+额外的解决方案微信和safari多测试一下:
+[blocked](https://stackoverflow.com/questions/6628949/window-open-popup-getting-blocked-during-click-event)
 
 ### 微信h5图分享问题
 
 微信在长按图片保存分享的时候，如果图片来源于后端，且生成需要session，此时就无法分享给朋友，需要先将后端动态生成给前端的图保存到本地base64.
+//fastclick问题
+https://blog.csdn.net/shentibeitaokong/article/details/86231818
+
+
+//https://github.com/ftlabs/fastclick/issues/582
+
+canvas画图模糊问题
+https://juejin.im/post/5aea7bb85188251cc953b71a
+
+### fastclick点击输入框双击才focus问题
 
 ### vue-router的权限路由问题
+
+
 
 
 
