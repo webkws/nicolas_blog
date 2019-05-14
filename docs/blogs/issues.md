@@ -147,8 +147,6 @@ if (/^([\w]+\:)?\/\//.test(src) && src.indexOf(location.host) === -1) {
 }
 ```
 
-
-
 ### 微信浏览器打开页面 被阻止问题
 `微信浏览器`和`safari`打开新标签会遇到弹出被阻止问题.
 原理:
@@ -167,16 +165,20 @@ document.getElementById('id').click();//href属性更改后模拟点击,让浏�
 ### 微信h5图分享问题
 
 微信在长按图片保存分享的时候，如果图片来源于后端，且生成需要session，此时就无法分享给朋友，需要先将后端动态生成给前端的图保存到本地base64.
-//fastclick问题
-https://blog.csdn.net/shentibeitaokong/article/details/86231818
+
+### fastclick问题
+着手一个项目，发现移动端输入框苹果端需要双击才可以focus, 找了半天才发现fastclick有 [issue](https://github.com/ftlabs/fastclick/issues/582)
 
 
-//https://github.com/ftlabs/fastclick/issues/582
+### canvas画图模糊问题
+是dpr问题, 解决方案如下
 
-canvas画图模糊问题
-https://juejin.im/post/5aea7bb85188251cc953b71a
+[resolve1](https://juejin.im/post/5aea7bb85188251cc953b71a)
 
-### fastclick点击输入框双击才focus问题
+[resolve2](https://stackoverflow.com/questions/24395076/canvas-generated-by-canvg-is-blurry-on-retina-screen)
+
+[获取dpr兼容方案](https://stackoverflow.com/questions/5063489/how-can-you-get-the-css-pixel-device-pixel-ratio)
+
 
 ### vue-router的权限路由问题
 
