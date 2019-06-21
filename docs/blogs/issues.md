@@ -168,6 +168,7 @@ document.getElementById('id').click();//href属性更改后模拟点击,让浏�
 
 ### fastclick问题
 着手一个项目，发现移动端输入框苹果端需要双击才可以focus, 找了半天才发现fastclick有 [issue](https://github.com/ftlabs/fastclick/issues/582)
+而fastclick对videojs播放器有影响，遍历给videojs对按钮[加className](https://stackoverflow.com/questions/28216483/how-to-remove-fastclick-from-a-specific-element)就可以了,或者是[unbind](https://github.com/ftlabs/fastclick/issues/234)
 
 
 ### canvas画图模糊问题
