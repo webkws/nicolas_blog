@@ -164,7 +164,10 @@ document.getElementById('id').click();//href属性更改后模拟点击,让浏�
 
 ### 微信h5图分享问题
 
-微信在长按图片保存分享的时候，如果图片来源于后端，且生成需要session，此时就无法分享给朋友，需要先将后端动态生成给前端的图保存到本地base64.
+微信在长按图片保存分享的时候，如果图片来源于后端，且需要session权限，此时就无法分享给朋友，需要先将后端动态生成给前端的图保存到本地base64.
+
+### js的连续赋值
+[注意事项](https://stackoverflow.com/questions/1758576/multiple-left-hand-assignment-with-javascript)
 
 ### fastclick问题
 着手一个项目，发现移动端输入框苹果端需要双击才可以focus, 找了半天才发现fastclick有 [issue](https://github.com/ftlabs/fastclick/issues/582)
