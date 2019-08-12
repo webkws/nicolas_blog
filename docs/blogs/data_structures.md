@@ -43,6 +43,9 @@
 数组不总是组织数据的最佳数据结构。在数组中，添加和删 除元素也很麻烦，因为需要将数组中的其他元素向前或向后平移，以反映数组刚刚进行了 添加或删除操作。如果需要随机访问，数组仍然是 更好的选择。
 
 [设计一个基于对象的链表](https://codepen.io/beaucarnes/pen/ybOvBq?editors=0011)
+以上实现较为繁琐，有个更简便的方式，增加了链表的查找
+[链表简单版](https://codepen.io/webkws/pen/wVQZGq)
+[双向链表](https://codepen.io/webkws/pen/wVQLaB?editors=1111)
 
 
 ### Trie
